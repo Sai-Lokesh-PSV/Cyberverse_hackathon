@@ -1,0 +1,47 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+.env.local
+.cache
+dist/
+build/
+coverage/
+
+# Hardhat
+artifacts/
+cache/
+
+# Python (AI/ML part)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+.ipynb_checkpoints/
+
+# Data / Models
+ai-ml/models/
+ai-ml/data/
+*.h5
+*.pkl
+*.pt
+*.ckpt
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Land Registry Design System - Professional, trustworthy government portal aesthetic */
+
+@layer base {
+  :root {
+    /* Base colors - clean whites and subtle grays */
+    --background: 0 0% 100%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Government blue - trustworthy and professional */
+    --primary: 213 94% 32%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 213 94% 28%;
+
+    /* Subtle secondary - light blue-gray */
+    --secondary: 213 27% 94%;
+    --secondary-foreground: 213 94% 32%;
+
+    /* Muted backgrounds */
+    --muted: 213 27% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - nature green for land/property theme */
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 213 27% 84%;
+    --input: 213 27% 84%;
+    --ring: 213 94% 32%;
+
+    /* Blockchain/tech accent */
+    --blockchain: 235 100% 60%;
+    --blockchain-foreground: 0 0% 100%;
+
+    /* Map and GIS colors */
+    --map-water: 199 89% 48%;
+    --map-land: 142 76% 36%;
+    --parcel-active: 45 93% 47%;
+    --parcel-border: 213 94% 32%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(213 94% 32%), hsl(235 100% 60%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(213 27% 98%));
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 42%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 12px -2px hsl(213 94% 32% / 0.1);
+    --shadow-card: 0 2px 8px -1px hsl(213 94% 32% / 0.06);
+    --shadow-glow: 0 0 20px hsl(213 94% 32% / 0.15);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode for government portal */
+    --background: 215 28% 9%;
+    --foreground: 0 0% 95%;
+    --card: 215 28% 11%;
+    --card-foreground: 0 0% 95%;
+    --primary: 213 94% 60%;
+    --primary-foreground: 215 28% 9%;
+    --secondary: 215 20% 16%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 215 20% 14%;
+    --muted-foreground: 215 10% 70%;
+    --accent: 142 76% 45%;
+    --accent-foreground: 215 28% 9%;
+    --border: 215 20% 18%;
+    --input: 215 20% 18%;
+    --ring: 213 94% 60%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom component styles using design system */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer components {
+  /* Government portal specific components */
+  .status-indicator {
+    @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium;
+  }
+
+  .status-verified {
+    @apply bg-success/10 text-success border border-success/20;
+  }
+
+  .status-pending {
+    @apply bg-warning/10 text-warning border border-warning/20;
+  }
+
+  .status-disputed {
+    @apply bg-destructive/10 text-destructive border border-destructive/20;
+  }
+
+  .blockchain-hash {
+    @apply font-mono text-xs bg-muted px-2 py-1 rounded border;
+  }
+
+  /* Interactive elements */
+  .hover-lift {
+    @apply transition-all duration-200 hover:-translate-y-1 hover:shadow-soft;
+  }
+
+  .data-table {
+    @apply w-full border-collapse border border-border rounded-lg overflow-hidden;
+  }
+
+  .data-table th {
+    @apply bg-muted px-4 py-3 text-left font-semibold border-b border-border;
+  }
+
+  .data-table td {
+    @apply px-4 py-3 border-b border-border/50;
+  }
+
+  .parcel-card {
+    @apply bg-card border border-border rounded-lg p-6 hover-lift;
+  }
+}
